@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Unified Login Screen - FTA ADAS Training</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Lexend", sans-serif
+    }
+.bg-login-overlay {
+    background-image: linear-gradient(rgba(246, 247, 248, 0.9), rgba(246, 247, 248, 0.9)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuCdpTXggkJX5s-RbN9HyDIbhQHAY8x4S-NBZ39z6lFAM0BjYySAcZd0GKHOjTMVGd5wz2qGBMQnosZ9czqA8J1wf44Np2b-6CK6ymh7R0I0EH1O4PDMjO2qTTVL5zUo1ceuyLc0eQLnOfbblpu1uwrxYg2lPLIreUfn5eJiLuJzIs3p2hudK37D6rJP43Hs3oAmn2h8uKSh6NgjKsahPo0eTiiOcH0i_6OHxiwakdnD0G7vHUwZ4V6THfqBKU1C5VN3AUUcaTIjv1o_);
+    background-size: cover;
+    background-position: center
+    }
+.dark .bg-login-overlay {
+    background-image: linear-gradient(rgba(16, 25, 34, 0.92), rgba(16, 25, 34, 0.92)), url(https://lh3.googleusercontent.com/aida-public/AB6AXuD2m7Z3JwgeZLQcFg8LAymlQQ2xAaUVVBYh3h3inObGeiVnJlgNF-3-R2EPdlEyZe7-mMrCQ6E2Ky_-mURXo4UeSS_hx1xH21_ILh7dZBDdHEWq7KGkQjfVEfYYS9BYoP8CABa0JYLxV9rlXa8tUZS6Qiwrn1j00T9wmqFCDrXTFSnNsL5zWzCJ-IhDC2rhfBUUeseOCAGEMbVxSa7lJ2ELMO6UFAABi2lwiglQMeGYaqvm5yiNIukmwL3bQHOy2MTKVrwWQD5IRXcs)
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen font-display transition-colors duration-300">
+<!-- Main Wrapper with Background Pattern -->
+<div class="relative flex h-screen w-full flex-col items-center justify-center bg-login-overlay overflow-hidden p-4" data-alt="Faint image of a modern city transit bus and highway">
+<!-- Header / Logo Area -->
+<div class="mb-8 flex flex-col items-center gap-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-4xl font-bold">directions_bus</span>
+<span class="text-2xl font-bold tracking-tight text-[#0d141b] dark:text-white uppercase">FTA</span>
+</div>
+</div>
+<!-- Central Login Card -->
+<div class="layout-content-container flex flex-col w-full max-w-[480px] bg-white dark:bg-slate-900 shadow-xl rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Headline Text Section -->
+<div class="pt-8 px-8 text-center">
+<h1 class="text-[#0d141b] dark:text-white tracking-tight text-2xl font-bold leading-tight">Welcome to FTA ADAS Training</h1>
+<p class="text-slate-600 dark:text-slate-400 text-sm font-normal leading-normal pt-2">Sign in to manage vehicle manuals and generate training modules.</p>
+</div>
+<!-- Login Form -->
+<div class="flex flex-col gap-1 p-8">
+<!-- TextField: Email -->
+<div class="flex flex-col gap-2 py-3">
+<label class="flex flex-col w-full">
+<p class="text-[#0d141b] dark:text-white text-sm font-semibold leading-normal pb-2">Agency Email Address</p>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">mail</span>
+<input class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 pl-11 pr-4 text-sm font-normal transition-all" placeholder="e.g. name@agency.gov" type="email" value=""/>
+</div>
+</label>
+</div>
+<!-- TextField: Password -->
+<div class="flex flex-col gap-2 py-3">
+<div class="flex justify-between items-center">
+<p class="text-[#0d141b] dark:text-white text-sm font-semibold leading-normal">Password</p>
+<a class="text-primary text-xs font-medium hover:underline" href="#">Forgot Password?</a>
+</div>
+<label class="flex flex-col w-full">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">lock</span>
+<input class="form-input flex w-full rounded-lg text-[#0d141b] dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 pl-11 pr-4 text-sm font-normal transition-all" placeholder="••••••••" type="password" value=""/>
+</div>
+</label>
+</div>
+<!-- Remember Me Checkbox -->
+<div class="flex items-center gap-2 py-2">
+<input class="w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary cursor-pointer" id="remember" type="checkbox"/>
+<label class="text-xs text-slate-600 dark:text-slate-400 cursor-pointer" for="remember">Remember this device</label>
+</div>
+<!-- Sign In Button -->
+<div class="flex flex-col gap-3 pt-6">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3 px-4 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2">
+                        Sign In
+                        <span class="material-symbols-outlined text-lg">login</span>
+</button>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-[#0d141b] dark:text-white font-semibold py-3 px-4 rounded-lg transition-colors text-sm">
+                        Request Agency Access
+                    </button>
+</div>
+</div>
+<!-- Card Footer -->
+<div class="bg-slate-50 dark:bg-slate-800/50 px-8 py-4 border-t border-slate-100 dark:border-slate-800 text-center">
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">
+                    Official Government System
+                </p>
+</div>
+</div>
+<!-- Utility Footer -->
+<div class="mt-8 flex gap-6 text-slate-500 dark:text-slate-400 text-xs">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Accessibility</a>
+<a class="hover:text-primary transition-colors" href="#">Help Desk</a>
+</div>
+<!-- Dark Mode Toggle Button (Floating) -->
+<button class="fixed bottom-6 right-6 p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined block dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+</div>
+</body></html>

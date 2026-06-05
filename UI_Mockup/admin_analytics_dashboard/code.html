@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Analytics Dashboard - Transit ADAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Noto+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Lexend', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col shrink-0">
+<div class="p-6 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">directions_bus</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-bold leading-tight">Transit Admin</h1>
+<p class="text-slate-500 text-xs font-normal">Global Controller</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="text-sm font-medium">Manuals</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">corporate_fare</span>
+<span class="text-sm font-medium">Agencies</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Users</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-9 rounded-full bg-slate-200 bg-cover bg-center" data-alt="Admin user avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD-dKWByfxI5vgqPRdd7BiM1kBhriT6j5pEXlqQNkZe3lwHemwOxeKE2F5EvGaT-JiV6Fgdz8fKQY171-faj_vHVZtAo7tkW04Qe-1LjVtC7rD3nK7vIvECYp84FdG0b_LYkoPYSbylS24Kh3Zfg8dHFXMs3ur5l9zio34lPykjGeI_sRbZhQOdJ2lHcR2aziB7Hjv0-q_ylgBf1bdJVILtHcZ-4JmHlTR_mIryKqOA422LT6xaZNUKRtedkN2rCDQ2Cl48cA7mJB_C')"></div>
+<div class="flex flex-col overflow-hidden">
+<p class="text-sm font-bold truncate">Alex Rivera</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Nav Bar -->
+<header class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-8 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-4 flex-1 max-w-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary" placeholder="Search agencies, trainings or users..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="size-10 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+<button class="bg-primary text-white text-sm font-bold px-4 py-2 rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+                        New Training
+                    </button>
+</div>
+</header>
+<!-- Content Scroll Area -->
+<div class="flex-1 overflow-y-auto p-8 space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap items-end justify-between gap-4">
+<div class="space-y-1">
+<h2 class="text-3xl font-black tracking-tight">System Analytics Overview</h2>
+<p class="text-slate-500">Monitoring training performance and agency activity across the platform.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+                            Last 30 Days
+                        </button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">download</span>
+                            Export CSV
+                        </button>
+</div>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Total Agencies</p>
+<span class="text-green-600 bg-green-50 dark:bg-green-900/20 text-xs px-2 py-0.5 rounded-full">+5.2%</span>
+</div>
+<p class="text-3xl font-bold">124</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Active Trainings</p>
+<span class="text-red-600 bg-red-50 dark:bg-red-900/20 text-xs px-2 py-0.5 rounded-full">-2.1%</span>
+</div>
+<p class="text-3xl font-bold">842</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full w-[45%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Completion Rate</p>
+<span class="text-green-600 bg-green-50 dark:bg-green-900/20 text-xs px-2 py-0.5 rounded-full">+12.4%</span>
+</div>
+<p class="text-3xl font-bold">78.4%</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[78%]"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<p class="text-sm font-medium text-slate-500">Manuals Uploaded</p>
+<span class="text-green-600 bg-green-50 dark:bg-green-900/20 text-xs px-2 py-0.5 rounded-full">+15.0%</span>
+</div>
+<p class="text-3xl font-bold">2,150</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 mt-2 rounded-full overflow-hidden">
+<div class="bg-blue-500 h-full w-[90%]"></div>
+</div>
+</div>
+</div>
+<!-- Main Section: Trends and User Management -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Training Trends Chart Placeholder -->
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<h3 class="text-lg font-bold">Training Activity Trends</h3>
+<select class="bg-slate-100 dark:bg-slate-800 border-none text-xs rounded-lg py-1 px-3">
+<option>Weekly</option>
+<option>Monthly</option>
+</select>
+</div>
+<div class="p-6 h-64 flex flex-col justify-end gap-4">
+<!-- Simple Bar Chart Representation -->
+<div class="flex items-end justify-between gap-2 h-full">
+<div class="w-full bg-primary/20 rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[45%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[70%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[50%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[60%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[85%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[55%]"></div>
+<div class="w-full bg-primary rounded-t-sm h-[95%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[65%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[75%]"></div>
+<div class="w-full bg-primary/20 rounded-t-sm h-[60%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-slate-400 font-medium">
+<span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span><span>SEP</span><span>OCT</span><span>NOV</span><span>DEC</span>
+</div>
+</div>
+</div>
+<!-- User Management Panel -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl flex flex-col">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h3 class="text-lg font-bold">User Management</h3>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm">JS</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold">John Smith</p>
+<p class="text-xs text-slate-500">MTA - Operations</p>
+</div>
+</div>
+<button class="size-8 rounded flex items-center justify-center text-slate-400 group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-sm">AM</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold">Anna Meyer</p>
+<p class="text-xs text-slate-500">CTA - Manager</p>
+</div>
+</div>
+<button class="size-8 rounded flex items-center justify-center text-slate-400 group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors group">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-sm">RK</div>
+<div class="flex flex-col">
+<p class="text-sm font-bold">Robert King</p>
+<p class="text-xs text-slate-500">LA Metro - Tech</p>
+</div>
+</div>
+<button class="size-8 rounded flex items-center justify-center text-slate-400 group-hover:text-primary">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+</div>
+<button class="w-full py-2 text-primary text-sm font-bold border border-primary/20 bg-primary/5 rounded-lg hover:bg-primary/10">
+                                View All Users
+                            </button>
+</div>
+</div>
+</div>
+<!-- Comprehensive Training Table -->
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex flex-wrap gap-4 justify-between items-center">
+<h3 class="text-lg font-bold">All Training Programs</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-700">Active (45)</span>
+<span class="px-3 py-1 bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-medium rounded-full border border-slate-100 dark:border-slate-800">Draft (12)</span>
+<span class="px-3 py-1 bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-medium rounded-full border border-slate-100 dark:border-slate-800">Archived (8)</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4">Training Title</th>
+<th class="px-6 py-4">Agency</th>
+<th class="px-6 py-4">Created Date</th>
+<th class="px-6 py-4">Assigned</th>
+<th class="px-6 py-4">Avg. Score</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-sm">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Emergency Braking v2.1</td>
+<td class="px-6 py-4">MTA New York</td>
+<td class="px-6 py-4 text-slate-500">Oct 12, 2023</td>
+<td class="px-6 py-4">1,240</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-bold">92%</span>
+<div class="w-12 h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full w-[92%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary font-bold hover:underline">View</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Lane Assist Awareness</td>
+<td class="px-6 py-4">Chicago Transit Authority</td>
+<td class="px-6 py-4 text-slate-500">Oct 09, 2023</td>
+<td class="px-6 py-4">840</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-bold">78%</span>
+<div class="w-12 h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[78%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="size-1.5 rounded-full bg-green-600"></span>
+                                            Active
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary font-bold hover:underline">View</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-white">Blind Spot Monitoring</td>
+<td class="px-6 py-4">LA Metro</td>
+<td class="px-6 py-4 text-slate-500">Oct 05, 2023</td>
+<td class="px-6 py-4">412</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="font-bold">64%</span>
+<div class="w-12 h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-orange-500 h-full w-[64%]"></div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400">
+<span class="size-1.5 rounded-full bg-slate-400"></span>
+                                            Draft
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary font-bold hover:underline">Edit</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<p class="text-xs text-slate-500">Showing 1 to 3 of 65 trainings</p>
+<div class="flex gap-2">
+<button class="size-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center bg-primary text-white text-xs font-bold">1</button>
+<button class="size-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center text-xs font-bold">2</button>
+<button class="size-8 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- System Health Alerts / Bottom Status -->
+<div class="flex items-center gap-4 p-4 bg-primary/5 border border-primary/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-sm text-slate-700 dark:text-slate-300">
+<span class="font-bold">System Health:</span> Manual "MTA-Bus-2024-Ops.pdf" processed successfully. 1,420 training nodes generated.
+                    </p>
+<button class="ml-auto text-primary text-xs font-bold uppercase tracking-widest">Dismiss</button>
+</div>
+</div>
+</main>
+</div>
+</body></html>

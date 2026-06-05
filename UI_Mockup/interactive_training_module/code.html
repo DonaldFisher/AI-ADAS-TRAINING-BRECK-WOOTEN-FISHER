@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interactive ADAS Training Module</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] dark:text-slate-50 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7edf3] dark:border-slate-800 bg-white dark:bg-background-dark px-6 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<div class="text-primary size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Transit Training Portal</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:block">
+<span class="text-sm font-medium text-slate-500 dark:text-slate-400">Course: ADAS Certification 2024</span>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold">
+                Save Progress
+            </button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-slate-200 dark:border-slate-700" data-alt="User avatar profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDo0Zv0oM151yXG35PAqpqpGDSUbrCauizEbhUYNNr8_Zn29-tdIRfI9LL6j-g7ceavBfockOXSR9rbCUBCaJN7sHZLJnMOtTiSeuv3_oMcq7xS0uUvlslEIbW8F16oJdlQonVvRzEefRc6Mp5qCdGafH2YNeUOSOxJ1l73QibJ2NX2qnWOGc0lh8U92dHmwDjNeZ85qS16gP69dXfb_UgxbWEHZ20-SIO0wmfCyWxXeAR7hLac3VAFt3AgpocHqQBV5YvUAPG8539G");'></div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="w-72 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hidden lg:flex flex-col p-6 overflow-y-auto">
+<div class="mb-8">
+<h1 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Course Content</h1>
+<p class="text-base font-semibold leading-tight mb-1">Module 2</p>
+<p class="text-sm text-slate-500">HMI Dashboard Interpretation</p>
+</div>
+<nav class="flex flex-col gap-2">
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary/10 text-primary border-l-4 border-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-semibold">HMI Overview</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Functionality</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">map</span>
+<p class="text-sm font-medium">ODD Parameters</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">touch_app</span>
+<p class="text-sm font-medium">Interaction &amp; Overrides</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined">quiz</span>
+<p class="text-sm font-medium">Knowledge Check</p>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
+<div class="bg-primary/5 p-4 rounded-xl">
+<p class="text-xs font-bold text-primary mb-2">TRAINING ASSISTANT</p>
+<p class="text-xs text-slate-600 dark:text-slate-400">"Click on any highlighted dashboard icon to see detailed operational data."</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col bg-slate-50 dark:bg-slate-900 overflow-y-auto">
+<!-- Progress Tracker Section -->
+<div class="bg-white dark:bg-background-dark px-8 py-4 border-b border-slate-200 dark:border-slate-800">
+<div class="max-w-4xl mx-auto flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-slate-500">Current Progress</span>
+<span class="text-sm font-bold text-primary">Slide 4 of 12 (33%)</span>
+</div>
+<div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all" style="width: 33%;"></div>
+</div>
+</div>
+</div>
+<!-- Learning Content -->
+<div class="flex-1 p-8">
+<div class="max-w-4xl mx-auto flex flex-col gap-8">
+<div class="text-center">
+<h2 class="text-3xl font-bold tracking-tight mb-2">HMI Dashboard Overview</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                            Modern ADAS systems communicate through visual cues on the instrument cluster. Familiarize yourself with these indicators before operating the vehicle.
+                        </p>
+</div>
+<!-- Interactive Diagram Container -->
+<div class="relative bg-white dark:bg-background-dark rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="aspect-video relative group">
+<!-- Background Image of Dashboard -->
+<div class="w-full h-full bg-cover bg-center" data-alt="Modern vehicle instrument cluster with digital displays" style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWzEKEj5BMTCuWPCZXHAa4CQBPaizAsMbxtZYVDcA6FX5CmRZvZRqEsprcan6iJXyvqh2001MFVPtbSZhIpnT9Qhah38vpHAkMrhPL4eq3tK5-5nTHLyoNMp07-lX38Yzf2bkJ655jCytp7y18lB4uI-T37qWe8G9L8I8wV6pfxNGWMpXgQgBhtfv__0lriIXt8mzYNmcEZdrCkpK5L5F8rvgIAU2N8VIeSeR5s3sBwpD5ooDG_vuXV1cbJB2nreoIil9DCG51vGUU");'></div>
+<!-- Interactive Hotspots -->
+<!-- Lane Keep Assist -->
+<div class="absolute top-1/4 left-1/4 group/hotspot cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-2 bg-primary/40 rounded-full animate-ping"></div>
+<div class="size-6 bg-primary rounded-full border-2 border-white flex items-center justify-center relative z-10 shadow-lg">
+<span class="text-white text-[10px] font-bold">1</span>
+</div>
+<!-- Tooltip / Callout (Visible on hover/click interaction logic) -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 bg-slate-900 text-white p-3 rounded-lg text-xs shadow-xl opacity-0 group-hover/hotspot:opacity-100 transition-opacity pointer-events-none">
+<div class="font-bold mb-1">Lane Keep Assist (LKA)</div>
+                                        Green indicates active tracking. White indicates standby.
+                                    </div>
+</div>
+</div>
+<!-- Adaptive Cruise Control -->
+<div class="absolute top-1/3 left-1/2 group/hotspot cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-2 bg-primary/40 rounded-full animate-pulse"></div>
+<div class="size-6 bg-primary rounded-full border-2 border-white flex items-center justify-center relative z-10 shadow-lg">
+<span class="text-white text-[10px] font-bold">2</span>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 bg-slate-900 text-white p-3 rounded-lg text-xs shadow-xl opacity-0 group-hover/hotspot:opacity-100 transition-opacity pointer-events-none">
+<div class="font-bold mb-1">Adaptive Cruise (ACC)</div>
+                                        Sets target speed and follow distance to the lead vehicle.
+                                    </div>
+</div>
+</div>
+<!-- Blind Spot Monitoring -->
+<div class="absolute top-1/2 right-1/4 group/hotspot cursor-pointer">
+<div class="relative">
+<div class="absolute -inset-2 bg-primary/40 rounded-full animate-ping"></div>
+<div class="size-6 bg-primary rounded-full border-2 border-white flex items-center justify-center relative z-10 shadow-lg">
+<span class="text-white text-[10px] font-bold">3</span>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-48 bg-slate-900 text-white p-3 rounded-lg text-xs shadow-xl opacity-0 group-hover/hotspot:opacity-100 transition-opacity pointer-events-none">
+<div class="font-bold mb-1">Blind Spot Monitor</div>
+                                        Flashes yellow/amber when a vehicle is detected in your lateral zone.
+                                    </div>
+</div>
+</div>
+</div>
+<!-- Overlay Legend (For accessibility) -->
+<div class="p-6 bg-slate-50 dark:bg-slate-900/50 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-3">
+<div class="size-6 rounded bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">1</div>
+<div>
+<p class="text-sm font-bold">LKA State</p>
+<p class="text-xs text-slate-500">Monitors lane departure via camera.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="size-6 rounded bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">2</div>
+<div>
+<p class="text-sm font-bold">Lead Vehicle Radar</p>
+<p class="text-xs text-slate-500">Visual feedback for distance gap.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="size-6 rounded bg-primary/20 text-primary flex items-center justify-center shrink-0 font-bold text-xs mt-0.5">3</div>
+<div>
+<p class="text-sm font-bold">Proximity Alerts</p>
+<p class="text-xs text-slate-500">Side-view mirror mirror alerts.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Details Card -->
+<div class="bg-primary/5 rounded-xl p-6 border border-primary/20">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">info</span>
+<div>
+<h3 class="text-lg font-bold text-primary mb-1">Key Insight: Multi-Modal Feedback</h3>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                                    The HMI isn't just visual. When these icons flash red, the steering wheel may vibrate (haptic) or an audible chime will sound. In emergency braking scenarios, the icon will dominate the center display.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Navigation Controls -->
+<footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-4 px-8 sticky bottom-0 z-50">
+<div class="max-w-4xl mx-auto flex justify-between items-center">
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 font-bold text-sm transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+                        Previous
+                    </button>
+<div class="flex gap-2">
+<div class="size-2 rounded-full bg-slate-200"></div>
+<div class="size-2 rounded-full bg-slate-200"></div>
+<div class="size-2 rounded-full bg-slate-200"></div>
+<div class="size-2 rounded-full bg-primary"></div>
+<div class="size-2 rounded-full bg-slate-200"></div>
+</div>
+<button class="flex items-center gap-2 px-8 py-2.5 rounded-lg bg-primary text-white font-bold text-sm hover:bg-blue-700 shadow-md transition-all">
+                        Next Slide
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transit Agency Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav {
+            background-color: rgba(19, 127, 236, 0.1);
+            color: #137fec;
+            border-left: 4px solid #137fec;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation -->
+<aside class="w-64 flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined">directions_bus</span>
+</div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-sm font-bold leading-tight">Transit Agency</h1>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal">Admin Portal</p>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg active-nav" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">book_2</span>
+<span class="text-sm font-medium">Training Library</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-sm font-medium">Help/Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-y-auto">
+<!-- Top Header -->
+<header class="h-16 flex items-center justify-between px-8 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-10">
+<div class="flex items-center gap-2">
+<span class="text-slate-400 material-symbols-outlined">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64" placeholder="Search trainings..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="User avatar profile picture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2Ei4TXh9EK2bvdULzlAoYFCaBz_fR3RH8n8csWPIHr6NaY7-WJh2cyT_9fRaol51ckhF7m4d2O2DeAFwm8qKjG1t2LfZQAy8oZ4r-DzoAmet8fGZSUeC07nOtKcEr7kPF6IJj-SK4DQXPQOnwtO5UluX9SX9vFyUrtnYZHK2FLYpXh6ifLn_MTpBLQQxgwzjocK3HrP0wAzNQwdegqxogJqWFo9YVWiYnJmslypADbrdrtx41VGbATue5Gqa0ion1uLiVpsQf0goI')"></div>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto w-full space-y-8">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-white text-3xl font-black leading-tight tracking-tight">Dashboard</h1>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Upload manuals and manage AI-generated ADAS training modules.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                            Export Reports
+                        </button>
+</div>
+</div>
+<!-- Create Section -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">Create New Training</h2>
+</div>
+<div class="p-6">
+<div class="flex flex-col items-center gap-6 rounded-xl border-2 border-dashed border-primary/30 bg-primary/5 dark:bg-primary/10 px-6 py-12 transition-all hover:border-primary/50">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl">upload_file</span>
+</div>
+<div class="flex max-w-[480px] flex-col items-center gap-2">
+<p class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight text-center">Upload Vehicle Manual</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal max-w-[400px] text-center">
+                                    Drag and drop your PDF manual here or click to browse. Our AI will automatically extract features and generate training modules.
+                                </p>
+</div>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Select PDF File</span>
+</button>
+<p class="text-slate-400 text-[10px] uppercase tracking-widest font-bold">Supported format: PDF (Max 50MB)</p>
+</div>
+</div>
+</div>
+<!-- My Trainings Section -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight">My Trainings</h2>
+<a class="text-primary text-sm font-semibold hover:underline" href="#">View All Library</a>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Module Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Created</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">Engagement</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Row 1: Active -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Proterra ZX5 ADAS Core</span>
+<span class="text-xs text-slate-500">Manual v2.4 (Collision Avoidance)</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 24, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-1.5"></span>
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-200" data-alt="User avatar 1" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdBExnJc689vizMQWIBAv6zO4BbV8Pnle2gDyF_tPCHAbUbm17-qyeQIAjj279W-iitqWyHLa1fuGM-kNqbtIobMNEMOsZ7fIBFpNJ-0Q-vTt0BwCI9zQ4EiKBP7p5ILfyIacvgjOaF-Xgc__iXtUiWLcalJfYpdG_NqxG85pLEN76JYS2cQcGkdJ32MguAYWV38Zr2zWiLhxbqOtg-6iL3JDQIc-exwebvySXn6OIDnhO23a5Jl3q8tSofN6qzodaLcr-RTxL6o1Q')"></div>
+<div class="w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-slate-300" data-alt="User avatar 2" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDn-kcK6QphoQUTOMFJBr1QL8Ba80OKLmMe3VnwB3iicjYCohKVpFzCpvaKykpHqQo9DsZ1Tc-JpyzDQ9kiuq1udfdlnYO-I970xKfQBMwa8Xy4XkKC0EaWGy-kSYRSh9kha6L-xzCqB2RBJzH33F96F-1b0vf1GYjp2UcAtDnrrhl_kpumYxxc8LnXkvpShvAsmIvUGc_Xz3TTBBuQJ2snuy2pNNRAg9jTtmRwX3ajb1EWVDIjYeKHzQrgOuf-FoGs75XVzHrcYptu')"></div>
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-white dark:border-slate-900 bg-primary/20 text-[8px] font-bold text-primary">+12</div>
+</div>
+<span class="text-xs font-medium text-slate-600 dark:text-slate-400">84% Comp.</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Processing -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">New Flyer Xcelsior Charge</span>
+<span class="text-xs text-slate-500">Maintenance &amp; Safety Modules</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 27, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400 animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-1.5"></span>
+                                                Processing
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<div class="w-24 h-1.5 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="w-[65%] h-full bg-primary rounded-full"></div>
+</div>
+<span class="text-[10px] text-slate-400 mt-1 block">AI Analysis 65%</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-300 cursor-not-allowed">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Draft -->
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-slate-900 dark:text-white">Gillig Advantage EV</span>
+<span class="text-xs text-slate-500">Operator Interface Training</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">Oct 22, 2023</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1.5"></span>
+                                                Draft
+                                            </span>
+</td>
+<td class="px-6 py-4">
+<span class="text-xs text-slate-400 italic">Not published</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Stats Footer Summary -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="p-3 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<p class="text-slate-500 text-xs font-medium">Total Active Users</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">1,284</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="p-3 bg-green-500/10 rounded-lg text-green-600">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-slate-500 text-xs font-medium">Compliance Rate</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">92.4%</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center gap-4">
+<div class="p-3 bg-amber-500/10 rounded-lg text-amber-600">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+<div>
+<p class="text-slate-500 text-xs font-medium">Modules in Review</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-white">3</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto py-8 px-8 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-400 text-xs">© 2023 TransitAI Solutions. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-primary text-xs transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-primary text-xs transition-colors" href="#">API Status</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

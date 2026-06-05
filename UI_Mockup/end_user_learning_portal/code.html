@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TransitLearn Portal - End User Learning</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#0d141b] transition-colors duration-200">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#e7edf3] dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+</div>
+<h2 class="text-[#0d141b] dark:text-white text-lg font-bold leading-tight tracking-tight">TransitLearn Portal</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-[#e7edf3] dark:bg-slate-800 text-[#0d141b] dark:text-white hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-[#e7edf3] dark:bg-slate-800 text-[#0d141b] dark:text-white hover:bg-slate-200 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary/20" data-alt="Profile picture of a male transit driver" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAvVGSsRA8QLU2JZK_6bTu48JgRJjzS6bvUeKJ1fH7ZhOxaYqmWaaJTdYWIGcuytc32JSrezKTofwAgYQfa0ugTgtrkiKjNKtZf6RJu-desym9ZpFbb-FJPkSA53GYv7xl3rVxai1z2JIljxu9-LLqRSqUZSlyjZTd3lkk4JW_HWkRzhOsi0cU9zQa4TcOkeACPm1UxatYTBGEBD1cFwP93-kapmVqTwweKGFPqnvoRUZwSyW_NMpmxmJLL7xuST_I4vsj2iSUcraGc");'>
+</div>
+</div>
+</header>
+<main class="flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1100px] flex-1 px-4 md:px-10">
+<!-- Page Heading -->
+<div class="flex flex-wrap justify-between items-end gap-3 mb-8">
+<div class="flex flex-col gap-2">
+<p class="text-[#0d141b] dark:text-white text-4xl font-black leading-tight tracking-tight">Hello, Driver Smith</p>
+<p class="text-slate-500 dark:text-slate-400 text-base font-normal">Welcome back! You have 3 training modules to complete this week.</p>
+</div>
+</div>
+<!-- Stats Overview -->
+<div class="flex flex-wrap gap-4 mb-10">
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined">schedule</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium uppercase tracking-wider">Total Learning Time</p>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">12.5 hrs</p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-emerald-500">
+<span class="material-symbols-outlined">verified</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium uppercase tracking-wider">Certificates Earned</p>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">4</p>
+</div>
+<div class="flex min-w-[200px] flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-slate-900 border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 text-orange-500">
+<span class="material-symbols-outlined">pending_actions</span>
+<p class="text-slate-600 dark:text-slate-300 text-sm font-medium uppercase tracking-wider">Active Modules</p>
+</div>
+<p class="text-[#0d141b] dark:text-white tracking-tight text-3xl font-bold">3</p>
+</div>
+</div>
+<!-- Assigned Trainings Section -->
+<div class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight">Assigned Trainings</h2>
+<span class="text-primary text-sm font-bold flex items-center gap-1 cursor-pointer hover:underline">View all <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Module 1 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-[#cfdbe7] dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full h-40 bg-center bg-no-repeat bg-cover" data-alt="Interior of a modern transit bus showing lane sensors" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZXMPcAmu65X6xUjpGTqBgtKxCZt9nlNUi4EPh3gEEK9GvQroMbO5ew2W46e7LTYPyOmR7Mm6wiMpo3kw08m77g_IolFFKYzoprqmPo6mJWazTeHVMOlKyAne2SbS4FRM1GcbGLJjh8gCV499obzwLBtxn6--jGBqL49JqjUX2ksrO5zgJA_dlpXTQGPUN5ZlR9GWdTArWnP1Em3Lqa1M5qocfx-_fCuczV3hNg6h-9EP04Yut-keFzcv28Wf3GwC2rbvKGCrn1yjv");'>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold">Lane Keep Assist Module</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Advanced Driver Assistance Systems</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 40%;"></div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-primary text-sm font-bold">40% Complete</p>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors">Continue</button>
+</div>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-[#cfdbe7] dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full h-40 bg-center bg-no-repeat bg-cover" data-alt="Visual illustration of automatic emergency braking system" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdnP4HN28qTG9MLPusigmvEUSgcblRlyg_5dobnaUe9G5uGnCxQixhxRW6h2yPqdXjK8Hp0hhra2CEMVKYNHyW5AToeH85VUio8kw9pmia1emZo-0oEoIhSdokZzKdBP-a_bquvjzO7wyzGDioLmJNU-Yohj89H8rIJOAWee89C2Pt2b4xGyVWxNLbZX_rmjzya73zNEbrf8oesVt3etDnPl9ytZ8h3_d1dldBnIp3KMw3bpy_PYSv9D9OWowuhhFg0FTKghlevQp8");'>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold">Emergency Braking Systems</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Safety Protocols</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-slate-300 dark:bg-slate-700 h-full rounded-full" style="width: 0%;"></div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-bold">Not Started</p>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors">Start Now</button>
+</div>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-[#cfdbe7] dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full h-40 bg-center bg-no-repeat bg-cover" data-alt="Bus side mirror with blind spot warning icon active" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6tzw0XvPvwd1bm-tq5erXmR9efsunUaCYS6kzQWnCLSRT1rbf8eD-lrz_JGrUcU4fwYyrtF557g7WElV_cbvK7efyOnRJj44zXkHsSel2pmj2Iyj8UjgJyfAO7yOrb25HEu2omU7JMU49nLuLUDRWAJsJEeUV8EKl968YgUFPvW1KGrRvsW40nJcKTNcVxlgL1irz2EDBgPtKR-n03mIbweQSz78wWOKh5zwaR1e-wQ8gutNKLA3xgf5xibFDjtdZ4CJPhbHJYDvM");'>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<p class="text-[#0d141b] dark:text-white text-lg font-bold">Blind Spot Detection Basics</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Visual Awareness</p>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-primary text-sm font-bold">85% Complete</p>
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors">Finish Up</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Completed Trainings Section -->
+<div class="mb-12">
+<h2 class="text-[#0d141b] dark:text-white text-2xl font-bold leading-tight mb-6">Completed Trainings</h2>
+<div class="flex flex-col gap-3">
+<!-- Completion Row 1 -->
+<div class="flex items-center justify-between bg-white dark:bg-slate-900 p-4 rounded-xl border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-[#0d141b] dark:text-white font-bold">Collision Avoidance Overview</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Completed on Jan 12, 2024</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border-2 border-primary/20 hover:border-primary/40 text-primary rounded-lg font-bold transition-all text-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Certificate
+                            </button>
+</div>
+<!-- Completion Row 2 -->
+<div class="flex items-center justify-between bg-white dark:bg-slate-900 p-4 rounded-xl border border-[#cfdbe7] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-[#0d141b] dark:text-white font-bold">Pedestrian Safety Alerts</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Completed on Feb 05, 2024</p>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border-2 border-primary/20 hover:border-primary/40 text-primary rounded-lg font-bold transition-all text-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+                                Certificate
+                            </button>
+</div>
+</div>
+</div>
+<!-- Help Footer -->
+<div class="mt-auto py-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-sm">© 2024 TransitLearn AI. All systems operational.</p>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Support Center</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary text-sm font-medium transition-colors" href="#">Training Handbook</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
